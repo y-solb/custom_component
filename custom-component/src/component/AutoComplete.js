@@ -11,7 +11,7 @@ const AutoComplete = (props) => {
   const handleChange = () => {
     const value = textRef.current.value;
     let matches = [];
-    if (value.length > 0) {
+    if (value) {
       matches = list.filter((item) => {
         const regex = new RegExp(`${value}`, "gi");
         return item.match(regex);
