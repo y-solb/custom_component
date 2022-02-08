@@ -26,7 +26,7 @@ transform: translateX(-100%);
 }
 ```
 
-- CheckBoxLabel에 isOn의 true, false값에 따라 배경색이 결정됩니다.
+- CheckBoxLabel에서는 isOn의 true, false값에 따라 배경색이 결정됩니다.
 
 ### Modal
 
@@ -94,7 +94,7 @@ ClickToEdit
 
 input에서 값을 수정하고 focus를 잃었을 때(onBlur일 때) 수정된 내용이 반영되어야 했습니다. info라는 state 하나로 input의 값과 보이는 값을 관리하려니 onBlur가 발생하기 전에 onChange가 발생할 때마다 자동으로 업데이트가 되는 문제가 있었습니다.
 
-이를 해결하기 위해 display라는 보이는 값을 관리라는 state를 만들어 주었습니다. onChange가 발생하면 info의 값을 업데이트해 주고 onBlur가 발생하면 info의 값을 가져와 display를 업데이트해 줬습니다.
+이를 해결하기 위해 display라는 보이는 값을 관리는 state를 만들어 주었습니다. onChange가 발생하면 info의 값을 업데이트해 주고 onBlur가 발생하면 info의 값을 가져와 display를 업데이트해 줬습니다.
 
 ---
 
