@@ -1,13 +1,23 @@
-# 원티드 프리온보딩 코스
+# custom component 모음집
+
+- [Toggle](#toggle)
+- [Modal](#modal)
+- [Tab](#tab)
+- [Tag](#tag)
+- [AutoComplete](#autocomplete)
+- [ClickToEdit](#clicktoedit)
+- [Dropdown](#dropdown)
+
+(계속 업데이트 중)
 
 ## 배포 링크
 
-🔗 https://wanted-pre-onboarding-ysb.netlify.app/
+🔗 https://custom-component.netlify.app/
 
-## 구현한 방법과 이유
+## Tech Stack
 
-- JavaScript
 - HTML5
+- JavaScript
 - React
 - styled components
 
@@ -33,6 +43,7 @@ transform: translateX(-100%);
 - 버튼 클릭 시 handleModal에서 isShow의 값을 반대로(true로) 바꿔줍니다.
 - isShow가 true일 경우 Modal을 보여줍니다.
 - ModalWrapper 밖의 부분이 클릭 시 닫힐 수 있도록 onClick에 handleModal을 넣어주었습니다.
+- 이벤트 버블링을 막기 위해 e.target과 e.currentTarget이 같을 때만 Modal이 닫히도록 했습니다.
 - Modal창이 열려있을 경우 뒤에 화면 스크롤을 방지하기 위해 useEffect에서 isShow가 true라면 overflow를 hidden으로 주었습니다.
   ```jsx
   useEffect(() => {
@@ -56,54 +67,32 @@ transform: translateX(-100%);
 
 ### AutoComplete
 
-- Input에서 onChange 발생 시 handleChange가 작동합니다. handleChange는 textRef의 현재 값을 가져와 value에 넣어줍니다. value의 값이 있다면 대소문자를 구별하지 않고 문자열 내 모든 패턴을 검색합니다. 정규식과 일치하는 부분을 리턴하여 matches에 담아줍니다. 필터링이 끝나면 setOptions에 matches를 넣어주어 업데이트해 줍니다.
-- ClearBtn을 클릭 시 handleClear에서 textRef의 현재 값을 비워주고 options를 업데이트하기 위해 handleChange를 실행합니다.
-- option을 클릭 시 handleSelect에서 클릭된 option을 받아 textRef의 현재 값으로 넣어준 후 options를 업데이트하기 위해 handleChange를 실행합니다.
+- Input에서 `onChange` 발생 시 `handleChange`가 작동합니다. `handleChange`는 `textRef`의 현재 값을 가져와 `value`에 넣어줍니다. `value`의 값이 있다면 대소문자를 구별하지 않고 문자열 내 모든 패턴을 검색합니다. 정규식과 일치하는 부분을 리턴하여 `matches`에 담아줍니다. 필터링이 끝나면 `setOptions`에 `matches`를 넣어주어 업데이트해 줍니다.
+- ClearBtn을 클릭 시 `handleClear`에서 `textRef`의 현재 값을 비워주고 options를 업데이트하기 위해 `handleChange`를 실행합니다.
+- `option`을 클릭 시 `handleSelect`에서 클릭된 `option`을 받아 `textRef`의 현재 값으로 넣어준 후 `options`를 업데이트하기 위해 `handleChange`를 실행합니다.
 
 ### ClickToEdit
 
-- info는 현재 Input의 값을 display는 입력 완료 시 보이는 값입니다.
-- 각 Input에서 onChange가 발생하면 handleChange에서 e.target.name과 e.target.value를 가져와 info를 업데이트해 줬습니다.
-- Input에서 포커스가 해제되었을 경우 handleBlur에서 info의 값을 가져와 display를 업데이트해 줬습니다.
+- `info`는 현재 Input의 값을 `display`는 입력 완료 시 보이는 값입니다.
+- 각 Input에서 `onChange`가 발생하면 `handleChange`에서 `e.target.name`과 `e.target.value`를 가져와 `info`를 업데이트해 줬습니다.
+- Input에서 포커스가 해제되었을 경우 `handleBlur`에서 `info`의 값을 가져와 `display`를 업데이트해 줬습니다.
+
+### Dropdown
+
+- `isDropdown`으로 dropdown이 열렸는지 닫혔는지 상태를 관리해 줍니다.
+- 선택된 option이 있다면 `selectedOption`에 값을 넣어줍니다.
+- OPTIONS를 `map` 함수로 돌려 dropdown 리스트를 만들어줬습니다.
 
 ### Container
 
 - 각 component의 제목과 component를 감싸는 div로 이루어진 component입니다.
-
----
-
-## 구현하면서 어려웠던 점과 해결 방법
-
-Toggle
-
-Toggle 작동을 자세히 보니 switch 클릭 시 배경이 채워지면서 움직이는 걸 발견했습니다.
-
-이를 구현하기 위해 linear-gradient를 이용했습니다. CheckBoxLabel에서 isOn의 상태를 props로 받아서 동적으로 만들었습니다. isOn이 true와 false의 경우에 따라 다음과 같이 움직입니다.
-
-```css
-  background-position: ${(props) => (props.isOn ? "left" : "right")};
-  background-image: ${(props) =>
-    props.isOn
-      ? "linear-gradient(to right, blueviolet 50%, lightgray 50%)"
-      : "linear-gradient(to left, lightgray 50%, blueviolet 50%)"};
-```
-
-background의 넓이를 200%로 주어 화면상에 반만 보일 수 있도록 하였습니다.
-
-ClickToEdit
-
-input에서 값을 수정하고 focus를 잃었을 때(onBlur일 때) 수정된 내용이 반영되어야 했습니다. info라는 state 하나로 input의 값과 보이는 값을 관리하려니 onBlur가 발생하기 전에 onChange가 발생할 때마다 자동으로 업데이트가 되는 문제가 있었습니다.
-
-이를 해결하기 위해 display라는 보이는 값을 관리는 state를 만들어 주었습니다. onChange가 발생하면 info의 값을 업데이트해 주고 onBlur가 발생하면 info의 값을 가져와 display를 업데이트해 줬습니다.
-
----
 
 ## 실행 방법
 
 원격 저장소를 복제 후 custom-component로 이동
 
 ```
-git clone https://github.com/y-solb/wanted_pre_onboarding.git
+git clone https://github.com/y-solb/custom_component.git
 cd custom-component
 ```
 
