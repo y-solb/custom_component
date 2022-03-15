@@ -28,7 +28,7 @@ const Modal = (props) => {
         <Background onClick={handleBackground}>
           <ModalWrapper>
             <CloseBtn onClick={handleModal}>&times;</CloseBtn>
-            <ModalContent>HELLO CODESTATES!</ModalContent>
+            <ModalContent>HELLO WORLD!</ModalContent>
           </ModalWrapper>
         </Background>
       )}
