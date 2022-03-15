@@ -9,6 +9,12 @@ const Modal = (props) => {
     setIsShow(!isShow);
   };
 
+  const handleBackground = (e) => {
+    if (e.target === e.currentTarget) {
+      setIsShow(!isShow);
+    }
+  };
+
   useEffect(() => {
     isShow
       ? (document.body.style.overflow = "hidden")
@@ -19,7 +25,7 @@ const Modal = (props) => {
     <Container title={"Modal"}>
       <ModalBtn onClick={handleModal}>Open Modal</ModalBtn>
       {isShow && (
-        <Background onClick={handleModal}>
+        <Background onClick={handleBackground}>
           <ModalWrapper>
             <CloseBtn onClick={handleModal}>&times;</CloseBtn>
             <ModalContent>HELLO CODESTATES!</ModalContent>
