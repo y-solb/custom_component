@@ -1,4 +1,3 @@
-import GlobalStyle from "./globalStyles";
 import styled from "styled-components";
 import Toggle from "./component/Toggle";
 import Modal from "./component/Modal";
@@ -6,11 +5,11 @@ import Tab from "./component/Tab";
 import Tag from "./component/Tag";
 import AutoComplete from "./component/AutoComplete";
 import ClickToEdit from "./component/ClickEdit";
+import Dropdown from "./component/Dropdown";
 
 function App() {
   return (
     <>
-      <GlobalStyle />
       <Layout>
         <Toggle />
         <Modal />
@@ -18,6 +17,7 @@ function App() {
         <Tag />
         <AutoComplete />
         <ClickToEdit />
+        <Dropdown />
       </Layout>
     </>
   );
