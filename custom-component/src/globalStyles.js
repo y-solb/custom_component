@@ -15,6 +15,7 @@ const GlobalStyle = createGlobalStyle`
         border:none;
         outline: none;
         font-size: 14px;
+        cursor: pointer;
     }
 
     ul{
