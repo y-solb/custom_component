@@ -23,11 +23,8 @@
 
 ### Toggle
 
-- ON과 OFF의 상태를 isOn으로 관리합니다.
-- input은 숨기고 label로 toggle을 만들었습니다. input의 id와 label의 htmlFor값을 똑같이 해서 연결시켜줬습니다.
-- 클릭 시 onChange에서 handleToggle 실행합니다.
-  handleToggle에서는 현재 isOn값을 반대로 업데이트해 줍니다.
-- checkBox가 체크될 경우 left값을 변경해 위치를 바꿔줍니다.
+- input은 숨기고 label로 toggle을 만들었습니다. input의 id값과 label의 htmlFor값을 똑같이 해서 연결시켜줬습니다.
+- CheckBoxInput이 체크될 경우 left값을 변경해 위치를 바꿔줍니다.
 
 ```jsx
 &:checked + ${CheckBoxLabel} ${Switch} {
@@ -36,14 +33,9 @@ transform: translateX(-100%);
 }
 ```
 
-- CheckBoxLabel에서는 isOn의 true, false값에 따라 배경색이 결정됩니다.
-
 ### Modal
 
-- 버튼 클릭 시 handleModal에서 isShow의 값을 반대로(true로) 바꿔줍니다.
-- isShow가 true일 경우 Modal을 보여줍니다.
-- ModalWrapper 밖의 부분이 클릭 시 닫힐 수 있도록 onClick에 handleModal을 넣어주었습니다.
-- 이벤트 버블링을 막기 위해 e.target과 e.currentTarget이 같을 때만 Modal이 닫히도록 했습니다.
+- ModalWrapper 밖의 부분이 클릭 시 닫힐 수 있도록 onClick에 handleBackground를 넣어주었습니다. 이벤트 버블링을 막기 위해 e.target과 e.currentTarget이 같을 때만 Modal이 닫히도록 했습니다.
 - Modal창이 열려있을 경우 뒤에 화면 스크롤을 방지하기 위해 useEffect에서 isShow가 true라면 overflow를 hidden으로 주었습니다.
   ```jsx
   useEffect(() => {
