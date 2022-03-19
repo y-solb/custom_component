@@ -23,8 +23,8 @@
 
 ### Toggle
 
-- input은 숨기고 label로 toggle을 만들었습니다. input의 id값과 label의 htmlFor값을 똑같이 해서 연결시켜줬습니다.
-- CheckBoxInput이 체크될 경우 left값을 변경해 위치를 바꿔줍니다.
+- input은 숨기고 label로 toggle을 만들었습니다. input의 `id`값과 label의 `htmlFor`값을 똑같이 해서 연결시켜줬습니다.
+- `CheckBoxInput`이 체크될 경우 `left`값을 변경해 위치를 바꿔줍니다.
 
 ```jsx
 &:checked + ${CheckBoxLabel} ${Switch} {
@@ -35,8 +35,8 @@ transform: translateX(-100%);
 
 ### Modal
 
-- ModalWrapper 밖의 부분이 클릭 시 닫힐 수 있도록 onClick에 handleBackground를 넣어주었습니다. 이벤트 버블링을 막기 위해 e.target과 e.currentTarget이 같을 때만 Modal이 닫히도록 했습니다.
-- Modal창이 열려있을 경우 뒤에 화면 스크롤을 방지하기 위해 useEffect에서 isShow가 true라면 overflow를 hidden으로 주었습니다.
+- `ModalWrapper` 밖의 부분이 클릭 시 닫힐 수 있도록 onClick에 `handleBackground`를 넣어주었습니다. 이벤트 버블링을 막기 위해 `e.target`과 `e.currentTarget`이 같을 때만 Modal이 닫히도록 했습니다.
+- Modal창이 열려있을 경우 뒤에 화면 스크롤을 방지하기 위해 `useEffect`에서 `isShow`가 `true`라면 `overflow`를 `hidden`으로 주었습니다.
   ```jsx
   useEffect(() => {
     isShow
@@ -47,15 +47,15 @@ transform: translateX(-100%);
 
 ### Tab
 
-- Tab 클릭 시 handleTab에서 tab의 값을 받아 currentTab에 업데이트를 해줬습니다.
-- 현재 클릭된 Tab(currentTab.id)과 tab의 id(tab.id)가 같다면 selected값이 true가 되어 색상이 변경됩니다.
+- Tab 클릭 시 `handleTab`에서 `tab`의 값을 받아 `currentTab`에 업데이트를 해줬습니다.
+- 현재 클릭된 Tab([currentTab.id](http://currenttab.id/))과 tab의 id([tab.id](http://tab.id/))가 같다면 `selected`값이 `true`가 되어 색상이 변경됩니다.
 
 ### Tag
 
-- Wrapper는 전체를 감싸는 div입니다. 이 안에는 추가되는 tag를 담는 TagList와 input인 TagInput이 있습니다.
-- input에 접근할 수 있도록 useRef를 이용해 inputRef를 넣어줬습니다.
-- onKeyPress에서 키가 Enter라면 handleAdd을 실행합니다. handleAdd는 inputRef의 현재 값을 가져와 value라는 변수에 넣어줍니다. value가 있다면 setTags로 배열을 추가해 줬습니다. 그 후에는 inputRef의 현재 값을 초기화했습니다.
-- 삭제 클릭 시 handleDelete에서 클릭된 tag의 값을 가져와 filter함수를 이용해 클릭된 tag의 값과 같지 않은 tag로 새로운 배열을 만들어 tags를 업데이트해 줬습니다.
+- `TagWrapper`는 전체를 감싸는 div입니다. 이 안에는 추가되는 tag를 담는 `TagList`와 input인 `TagInput`이 있습니다.
+- input에 접근할 수 있도록 `useRef`를 이용해 `inputRef`를 넣어줬습니다.
+- `onKeyPress`에서 키가 Enter라면 `handleAdd`을 실행합니다. `handleAdd`는 `inputRef`의 현재 값을 가져와 `value`라는 변수에 넣어줍니다. `value`가 있다면 `tags`에 추가해 줬습니다. 그 후에는 `inputRef`의 현재 값을 초기화했습니다.
+- 삭제 클릭 시 `handleDelete`에서 클릭된 tag의 값을 가져와 filter 함수를 이용해 클릭된 tag의 값과 같지 않은 tag로 새로운 배열을 만들어 `tags`를 업데이트해 줬습니다.
 
 ### AutoComplete
 
