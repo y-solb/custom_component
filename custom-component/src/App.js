@@ -6,6 +6,7 @@ import Tag from "./component/Tag";
 import AutoComplete from "./component/AutoComplete";
 import ClickToEdit from "./component/ClickEdit";
 import Dropdown from "./component/Dropdown";
+import CheckBox from "./component/CheckBox";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <AutoComplete />
         <ClickToEdit />
         <Dropdown />
+        <CheckBox />
       </Layout>
     </>
   );
