@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import Container from "./Container";
 
-const Toggle = (props) => {
+const Toggle = () => {
   const [isOn, setIsOn] = useState(false);
 
   const handleToggle = () => {
@@ -11,10 +11,10 @@ const Toggle = (props) => {
 
   return (
     <Container title={"Toggle"}>
-      <CheckBoxInput onChange={handleToggle} id="checkbox" type="checkbox" />
-      <CheckBoxLabel isOn={isOn} htmlFor="checkbox">
+      <ToggleInput onChange={handleToggle} id="toggle" type="checkbox" />
+      <ToggleLabel isOn={isOn} htmlFor="toggle">
         <Switch />
-      </CheckBoxLabel>
+      </ToggleLabel>
       <ToggleContent>Toggle Switch {isOn ? "ON" : "OFF"}</ToggleContent>
     </Container>
   );
@@ -22,7 +22,7 @@ const Toggle = (props) => {
 
 export default Toggle;
 
-const CheckBoxLabel = styled.label`
+const ToggleLabel = styled.label`
   position: relative;
   width: 100px;
   height: 48px;
@@ -50,11 +50,11 @@ const Switch = styled.span`
   transition: 0.4s;
 `;
 
-const CheckBoxInput = styled.input`
+const ToggleInput = styled.input`
   height: 0;
   width: 0;
   visibility: hidden;
-  &:checked + ${CheckBoxLabel} ${Switch} {
+  &:checked + ${ToggleLabel} ${Switch} {
     left: calc(100% - 8px);
     transform: translateX(-100%);
   }
