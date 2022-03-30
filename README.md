@@ -7,6 +7,7 @@
 - [AutoComplete](#autocomplete)
 - [ClickToEdit](#clicktoedit)
 - [Dropdown](#dropdown)
+- [Checkbox](#checkbox)
 
 (계속 업데이트 중)
 
@@ -23,7 +24,7 @@
 
 ### Toggle
 
-- input은 숨기고 label로 toggle을 만들었습니다. input의 `id`값과 label의 `htmlFor`값을 똑같이 해서 연결시켜줬습니다.
+- input의 `type`은 `checkbox`로 주고 label이 보이도록 만들기 위해 input은 숨기고 label로 toggle을 만들었습니다. input의 `id`값과 label의 `htmlFor`값을 똑같이 해서 연결시켜줬습니다.
 - `CheckBoxInput`이 체크될 경우 `left`값을 변경해 위치를 바꿔줍니다.
 
 ```jsx
@@ -75,9 +76,15 @@ transform: translateX(-100%);
 - 선택된 option이 있다면 `selectedOption`에 값을 넣어줍니다.
 - OPTIONS를 `map` 함수로 돌려 dropdown 리스트를 만들어줬습니다.
 
+### Checkbox
+
+- `isCheck`로 체크박스가 선택되었는지 관리해 줍니다.
+
+- input의 `type`은 `checkbox`로 주고 label이 보이도록 만들기 위해 input은 숨겨줬습니다. input의 `id`값과 label의 `htmlFor`값을 똑같이 해서 연결시켜줬습니다.
+
 ### Container
 
-- 각 component의 제목과 component를 감싸는 div로 이루어진 component입니다.
+- 각 component의 제목과 component를 감싸는 div로 이루어진 공통 component입니다.
 
 ## 실행 방법
 
