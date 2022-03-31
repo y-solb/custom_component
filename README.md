@@ -49,7 +49,7 @@ transform: translateX(-100%);
 ### Tab
 
 - Tab 클릭 시 `handleTab`에서 `tab`의 값을 받아 `currentTab`에 업데이트를 해줬습니다.
-- 현재 클릭된 Tab([currentTab.id](http://currenttab.id/))과 tab의 id([tab.id](http://tab.id/))가 같다면 `selected`값이 `true`가 되어 색상이 변경됩니다.
+- 현재 클릭된 Tab(`currentTab.id`)과 tab의 id(`tab.id`)가 같다면 `selected`값이 `true`가 되어 색상이 변경됩니다.
 
 ### Tag
 
