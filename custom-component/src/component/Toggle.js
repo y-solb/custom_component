@@ -31,8 +31,8 @@ const ToggleLabel = styled.label`
   background-position: ${(props) => (props.isOn ? "left" : "right")};
   background-image: ${(props) =>
     props.isOn
-      ? "linear-gradient(to right, blueviolet 50%, lightgray 50%)"
-      : "linear-gradient(to left, lightgray 50%, blueviolet 50%)"};
+      ? "linear-gradient(to right, #6667AB 50%, lightgray 50%)"
+      : "linear-gradient(to left, lightgray 50%, #6667AB 50%)"};
   background-size: 200%;
   transition: 0.4s;
   cursor: pointer;

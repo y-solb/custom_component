@@ -43,7 +43,7 @@ const ModalBtn = styled.button`
   height: 48px;
   border-radius: 100px;
   color: white;
-  background-color: blueviolet;
+  background-color: #6667ab;
 `;
 
 const Background = styled.div`
@@ -80,5 +80,5 @@ const CloseBtn = styled.button`
 
 const ModalContent = styled.p`
   font-size: 24px;
-  color: blueviolet;
+  color: #6667ab;
 `;

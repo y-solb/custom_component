@@ -54,7 +54,7 @@ const TabBtn = styled.button`
   height: 48px;
   padding: 12px;
   color: ${(props) => (props.selected ? "white" : "gray")};
-  background-color: ${(props) => (props.selected ? "blueviolet" : "lightgray")};
+  background-color: ${(props) => (props.selected ? "#6667AB" : "lightgray")};
   text-align: start;
   font-weight: 600;
 `;

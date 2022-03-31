@@ -43,7 +43,7 @@ const CheckBoxLabel = styled.label`
   width: 28px;
   height: 28px;
   padding: 4px;
-  background: ${(props) => (props.isCheck ? "blueviolet" : "white")};
+  background: ${(props) => (props.isCheck ? "#6667AB" : "white")};
   border: ${(props) => (props.isCheck ? "none" : "1px solid lightgray")};
   border-radius: 50%;
   ${Icon} {

@@ -54,4 +54,8 @@ const Input = styled.input`
   padding: 10px;
   text-align: center;
   border: 1px solid lightgray;
+  &:focus {
+    border: 1px solid #6667ab;
+    outline: none;
+  }
 `;

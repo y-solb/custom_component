@@ -59,7 +59,7 @@ const TagWrapper = styled.div`
   border: 1px solid lightgray;
   border-radius: 8px;
   &:hover {
-    border-color: blueviolet;
+    border-color: #6667ab;
   }
 `;
 
@@ -73,7 +73,7 @@ const TagItem = styled.li`
   align-items: center;
   padding: 8px;
   border-radius: 4px;
-  background-color: blueviolet;
+  background-color: #6667ab;
 `;
 
 const TagContent = styled.p`
