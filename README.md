@@ -4,8 +4,6 @@
 - [Modal](#modal)
 - [Tab](#tab)
 - [Tag](#tag)
-- [AutoComplete](#autocomplete)
-- [ClickToEdit](#clicktoedit)
 - [Dropdown](#dropdown)
 - [Checkbox](#checkbox)
 
@@ -17,7 +15,6 @@
 
 ## Tech Stack
 
-- HTML5
 - JavaScript
 - React
 - styled components
@@ -57,18 +54,6 @@ transform: translateX(-100%);
 - input에 접근할 수 있도록 `useRef`를 이용해 `inputRef`를 넣어줬습니다.
 - `onKeyPress`에서 키가 Enter라면 `handleAdd`을 실행합니다. `handleAdd`는 `inputRef`의 현재 값을 가져와 `value`라는 변수에 넣어줍니다. `value`가 있다면 `tags`에 추가해 줬습니다. 그 후에는 `inputRef`의 현재 값을 초기화했습니다.
 - 삭제 클릭 시 `handleDelete`에서 클릭된 tag의 값을 가져와 filter 함수를 이용해 클릭된 tag의 값과 같지 않은 tag로 새로운 배열을 만들어 `tags`를 업데이트해 줬습니다.
-
-### AutoComplete
-
-- Input에서 `onChange` 발생 시 `handleChange`가 작동합니다. `handleChange`는 `textRef`의 현재 값을 가져와 `value`에 넣어줍니다. `value`의 값이 있다면 대소문자를 구별하지 않고 문자열 내 모든 패턴을 검색합니다. 정규식과 일치하는 부분을 리턴하여 `matches`에 담아줍니다. 필터링이 끝나면 `setOptions`에 `matches`를 넣어주어 업데이트해 줍니다.
-- ClearBtn을 클릭 시 `handleClear`에서 `textRef`의 현재 값을 비워주고 options를 업데이트하기 위해 `handleChange`를 실행합니다.
-- `option`을 클릭 시 `handleSelect`에서 클릭된 `option`을 받아 `textRef`의 현재 값으로 넣어준 후 `options`를 업데이트하기 위해 `handleChange`를 실행합니다.
-
-### ClickToEdit
-
-- `info`는 현재 Input의 값을 `display`는 입력 완료 시 보이는 값입니다.
-- 각 Input에서 `onChange`가 발생하면 `handleChange`에서 `e.target.name`과 `e.target.value`를 가져와 `info`를 업데이트해 줬습니다.
-- Input에서 포커스가 해제되었을 경우 `handleBlur`에서 `info`의 값을 가져와 `display`를 업데이트해 줬습니다.
 
 ### Dropdown
 
